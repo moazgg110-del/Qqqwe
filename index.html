@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة المغامرة الذكية - AI Adventure</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <div class="logo">
+                <i class="fa-solid fa-dragon"></i>
+                <span>مغامرة الذكاء الاصطناعي</span>
+            </div>
+            <div class="header-stats">
+                <div class="stat-badge"><i class="fa-solid fa-heart"></i> <span id="player-hp">100</span></div>
+                <div class="stat-badge"><i class="fa-solid fa-star"></i> <span id="player-score">0</span></div>
+                <div class="stat-badge"><i class="fa-solid fa-layer-group"></i> <span id="game-level">المستوى 1</span></div>
+                <button id="settings-btn" class="icon-btn" title="الإعدادات"><i class="fa-solid fa-gear"></i></button>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-main">
+            <div class="story-card">
+                <div id="story-loading" class="loading-spinner hidden">
+                    <i class="fa-solid fa-spinner fa-spin"></i> جاري نسج أحداث القصة...
+                </div>
+                <div id="story-text" class="story-text">
+                    أهلاً بك أيها البطل في عالم المغامرات الأسطوري. تبدأ رحلتك في غامض الأسرار حيث تتشكل الأحداث بناءً على قراراتك الذكية. استعد لتجربة فريدة...
+                </div>
+            </div>
+
+            <div id="choices-container" class="choices-container">
+                <button class="choice-btn" onclick="game.startAdventure()">بدء المغامرة الجديدة <i class="fa-solid fa-play"></i></button>
+            </div>
+        </main>
+
+        <!-- Settings Modal (API Key Field Removed) -->
+        <div id="settings-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>إعدادات اللعبة</h3>
+                    <button id="close-settings" class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-item">
+                        <label for="sound-toggle">المؤثرات الصوتية</label>
+                        <input type="checkbox" id="sound-toggle" checked>
+                    </div>
+                    <div class="setting-item">
+                        <label for="theme-select">ثيم اللعبة</label>
+                        <select id="theme-select">
+                            <option value="dark">ليلي داكن (افتراضي)</option>
+                            <option value="cyber">سايبر بانك</option>
+                            <option value="fantasy">خيالي أسطوري</option>
+                        </select>
+                    </div>
+                    <div class="setting-info">
+                        <p><i class="fa-solid fa-circle-info"></i> تم دمج الاتصال المباشر بالذكاء الاصطناعي بنجاح وأمان في النظام.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="save-settings" class="primary-btn">حفظ الإعدادات</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
